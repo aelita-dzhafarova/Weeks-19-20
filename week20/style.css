@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+
+@font-face { 
+    font-family: 'Death Star';
+    src : url('./death-star-font/DeathStar-VmWB.ttf') format('truetype');
+}
+
+body {
+    background-image: url('./pxfuel.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+h1,
+h2 {
+    font-family: 'Death Star', sans-serif;
+    text-align: center;
+    font-size: 50px;
+    color: white;
+}
+
+h2 {
+    font-family: 'Death Star', sans-serif;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.wrapper {
+    margin-top: 20px;
+}
+
+.result,
+.error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+select,
+button {
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px 15px;
+    background-color: #872657;
+    border: 0;
+    border-radius: 20px;
+    font-size: 20px;
+    color: white;
+}
+
+input {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    background-color: #C48793;
+    border-radius: 20px;
+    border: none;
+}
+
+::placeholder {
+    color: silver;
+    text-align: center;
+    font-style: italic;
+}
+
+p {
+    margin: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: white;
+}
+
+.loader {
+    margin: auto;
+    --b: 8px;
+    /* border thickness */
+    --n: 6;
+    /* number of dashes*/
+    --g: 10deg;
+    /* gap  between dashes*/
+    --c: rgb(233, 76, 137);
+    /* the color */
+    width: 50px;
+    /* size */
+    aspect-ratio: 1;
+    border-radius: 50%;
+    padding: 1px;
+    /* get rid of bad outlines */
+    background: conic-gradient(#0000, var(--c)) content-box;
+    --_m:
+        /* we use +/-1deg between colors to avoid jagged edges */
+        repeating-conic-gradient(#0000 0deg,
+            #000 1deg calc(360deg/var(--n) - var(--g) - 1deg),
+            #0000 calc(360deg/var(--n) - var(--g)) calc(360deg/var(--n))),
+        radial-gradient(farthest-side, #0000 calc(98% - var(--b)), #000 calc(100% - var(--b)));
+    -webkit-mask: var(--_m);
+    mask: var(--_m);
+    -webkit-mask-composite: destination-in;
+    mask-composite: intersect;
+    animation: load 1s infinite steps(var(--n));
+}
+
+@keyframes load {
+    to {
+        transform: rotate(1turn)
+    }
+}
